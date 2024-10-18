@@ -8,16 +8,18 @@ import Nav from "@/components/ui/Nav";
 
 export default function Home() {
   return (
-    <main>
-      <div>
-        <Nav />
-        <Hero />
-        <About />
-        <Skills />
-        <Projects />
-        <Contact />
-        <Footer />
-      </div>
-    </main>
+    <div>
+      <Nav />
+      <main>
+        <div>
+          <Hero />
+          <About />
+          <Skills />
+          <Projects />
+          <Contact />
+          <Footer />
+        </div>
+      </main>
+    </div>
   );
 }
