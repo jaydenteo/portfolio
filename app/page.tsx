@@ -11,14 +11,16 @@ export default function Home() {
     <div>
       <Nav />
       <main>
-        <div>
-          <Hero />
-          <About />
-          <Skills />
-          <Projects />
-          <Contact />
-          <Footer />
+        <Hero />
+        <div className="relative bg-black text-white rounded-3xl">
+          <div className="pt-24">
+            <About />
+            <Skills />
+            <Projects />
+          </div>
         </div>
+        <Contact />
+        <Footer />
       </main>
     </div>
   );

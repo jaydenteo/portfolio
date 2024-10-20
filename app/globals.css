@@ -2,8 +2,101 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  /* .container {
-    @apply px-4;
-  } */
+:root {
+  /* Typography */
+
+  --text-mono: clamp(0.6rem, 0.5143rem + 0.3571vi, 0.9rem); /* ~10px - 14px */
+  --text-base--small: clamp(
+    0.875rem,
+    0.5393rem + 0.5786vi,
+    1rem
+  ); /* ~14px - 16px */
+  --text-base: clamp(1rem, 0.9286rem + 0.3571vi, 1.25rem); /* ~16px - 20px */
+  --text-base--large: clamp(
+    1rem,
+    0.8571rem + 0.7143vi,
+    1.5rem
+  ); /* ~16px - 24px */
+
+  --heading-6: clamp(1rem, 0.928rem + 0.36vw, 1.25rem); /* ~16px - 20px */
+  --heading-5: clamp(1.13rem, 1.004rem + 0.63vw, 1.57rem); /* ~18px - 25px */
+  --heading-4: clamp(
+    1.25rem,
+    1.0359rem + 1.0707vi,
+    1.9995rem
+  ); /* ~20px - 32px */
+  --heading-3: clamp(
+    1.5625rem,
+    1.2474rem + 1.5755vi,
+    2.6653rem
+  ); /* ~25px - 42px */
+  --heading-2: clamp(
+    1.9531rem,
+    1.496rem + 2.2854vi,
+    3.5529rem
+  ); /* ~31px - 57px */
+  --heading-1: clamp(3.5rem, 2.3571rem + 5.5143vi, 10.5rem); /* ~56px - 120px */
+  --heading-display: clamp(4rem, 0.05rem + 12.5vi, 20rem); /* ~64px - 160px */
+  --heading-body: clamp(1rem, 0.6071rem + 1.0143vi, 2.25rem); /* ~16px - 36px */
+  --heading-1--alt: clamp(3rem, 2.25rem + 3.75vi, 5.625rem); /* ~48px - 90px */
+  --text-menu: clamp(2.5rem, 1.107rem + 3.5714vi, 4.5rem); /* ~40px - 72px */
+
+  /* Padding & Spacing */
+
+  --padding-horizontal--main: clamp(
+    1rem,
+    0.428rem + 2.86vw,
+    3rem
+  ); /* ~16px - 48px */
+  --padding-v: clamp(0.89rem, 0.862rem + 0.14vw, 0.99rem); /* ~14px - 16px */
+  --padding-button: clamp(0.89rem, 0.7rem + 0.14vw, 0.88rem); /* ~14px - 14px */
+  --padding-top--main: clamp(
+    1rem,
+    1.8571rem + 1.5143vi,
+    3.5rem
+  ); /* ~16px - 56px */
+
+  /* Spacing */
+
+  --space-3xs: clamp(0.3125rem, 0.3125rem + 0vi, 0.3125rem); /* ~5px */
+  --space-2xs: clamp(
+    0.5625rem,
+    0.5446rem + 0.0893vi,
+    0.625rem
+  ); /* ~9px - 10px */
+  --space-xs: clamp(
+    0.875rem,
+    0.8571rem + 0.0893vi,
+    0.9375rem
+  ); /* ~14px - 15px */
+  --space-sm: clamp(1.125rem, 1.0893rem + 0.1786vi, 1.25rem); /* ~18px - 20px */
+  --space-md: clamp(
+    1.6875rem,
+    1.6339rem + 0.2679vi,
+    1.875rem
+  ); /* ~27px - 30px */
+  --space-lg: clamp(2.25rem, 2.1786rem + 0.3571vi, 2.5rem); /* ~36px - 40px */
+  --space-xl: clamp(3.375rem, 3.2679rem + 0.5357vi, 3.75rem); /* ~54px - 60px */
+  --space-2xl: clamp(4.5rem, 4.3571rem + 0.7143vi, 5rem); /* ~72px - 80px */
+  --space-3xl: clamp(
+    5.25rem,
+    5.8571rem + 0.9023vi,
+    6.25rem
+  ); /* ~84px - 100px */
+  --gap-fluid: clamp(1rem, 0.8571rem + 1.0143vi, 3.5rem); /* ~16px - 56px */
+
+  /* Grid Settings */
+
+  --column-count: 12;
+  --grid-main: repeat(var(--column-count), minmax(0, 1fr));
+  --grid-gap-total: calc(var(--gap-fluid) * (var(--column-count) - 1));
+  --column-width: calc(
+    (100% - var(--grid-gap-total)) / var(--column-count) + var(--gap-fluid)
+  );
 }
+
+/* @layer base {
+  .container {
+    @apply px-4;
+  }
+} */

@@ -2,7 +2,7 @@
 
 import { navItems, socials } from "@/data/navData";
 import React, { useState } from "react";
-import { twMerge } from "tailwind-merge";
+import { clsx } from "clsx";
 
 const Nav = () => {
   const [open, setOpen] = useState(false);
@@ -12,16 +12,19 @@ const Nav = () => {
   };
 
   return (
-    <nav className="flex justify-between items-center p-4 bg-transparent">
+    <nav className="flex justify-between items-center p-space-lg fixed w-full z-20">
       <a
         href="#"
-        className={twMerge("font-bold text-xl z-20", open && "text-white")}
+        className={clsx(
+          "font-semibold text-text-base--small z-20",
+          open && "text-black"
+        )}
       >
         Teo<sup>&copy;</sup>
       </a>
 
       {/* Desktop */}
-      <div className="hidden md:flex space-x-4 text-sm">
+      <div className="hidden md:flex space-x-4 text-text-base--small">
         {navItems.map(
           (item) =>
             item.name !== "Home" && (
@@ -36,10 +39,7 @@ const Nav = () => {
       <div className="md:hidden z-20">
         <button
           onClick={toggleMenu}
-          className={twMerge(
-            "text-xl focus:outline-none",
-            open && "text-white"
-          )}
+          className={clsx("text-xl focus:outline-none", open && "text-black")}
           aria-label="Toggle menu"
         >
           {open ? "✕" : "☰"}
@@ -48,13 +48,13 @@ const Nav = () => {
 
       {/* Mobile */}
       <div
-        className={twMerge(
-          "fixed inset-0 bg-black bg-opacity-90  transition-opacity duration-300 md:hidden z-10",
+        className={clsx(
+          "fixed inset-0 bg-white bg-opacity-90 transition-opacity duration-300 md:hidden z-10",
           open ? "opacity-100" : "opacity-0 pointer-events-none"
         )}
         aria-hidden={!open}
       >
-        <div className="container h-full text-white flex flex-col items-start justify-center">
+        <div className="container h-full flex flex-col items-start justify-center">
           {navItems.map((item) => (
             <a
               key={item.name}
