@@ -31,12 +31,12 @@ export enum Skill {
   VSCode = "VSCode"
 }
 
-interface SkillItem {
+export interface SkillItem {
   name: Skill;
   icon: string;
 }
 
-interface SkillCategory {
+export interface SkillCategory {
   category: Category;
   skills: SkillItem[];
 }

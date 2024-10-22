@@ -12,11 +12,11 @@ export default function Home() {
       <Nav />
       <main>
         <Hero />
-        <div className="relative bg-black text-white rounded-3xl">
+        <div className="relative bg-black text-white rounded-3xl z-10">
           <div className="pt-24">
-            <About />
             <Skills />
             <Projects />
+            <About />
           </div>
         </div>
         <Contact />
