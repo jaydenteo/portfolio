@@ -1,8 +1,18 @@
+import clsx from "clsx";
 import React from "react";
 
-const Button = () => {
+interface ButtonProps {
+  className?: string;
+}
+
+const Button = ({ className }: ButtonProps) => {
   return (
-    <button className="px-space-lg py-space-sm bg-purple-700 text-white font-bold rounded-full uppercase">
+    <button
+      className={clsx(
+        "px-space-lg py-space-sm bg-purple-700 text-white font-bold rounded-full uppercase",
+        className
+      )}
+    >
       Get in touch
     </button>
   );

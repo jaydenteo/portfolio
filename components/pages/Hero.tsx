@@ -8,10 +8,12 @@ function Hero() {
       <div className="h-svh sticky top-0 flex items-center justify-center w-full">
         <div className="w-full p-space-lg">
           <Logo className="uppercase" />
-          <p className="mt-4 text-text-base--large">
+          <p className="pt-space-md text-text-base--large">
             Software Engineer at Accenture
           </p>
-          <Button />
+          <div className="pt-space-md">
+            <Button />
+          </div>
         </div>
       </div>
       <div className="h-[100svh]" />

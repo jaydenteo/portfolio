@@ -28,7 +28,7 @@ const config: Config = {
         'heading-4': 'var(--heading-4)',
         'heading-3': 'var(--heading-3)',
         'heading-2': 'var(--heading-2)',
-        'heading-1': '50px',
+        'heading-1': 'var(--heading-1)',
         'heading-display': 'var(--heading-display)',
         'heading-body': 'var(--heading-body)',
         'heading-1--alt': 'var(--heading-1--alt)',
