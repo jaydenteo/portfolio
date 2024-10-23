@@ -1,31 +1,25 @@
 "use client";
 
 import React, { useState } from "react";
-
-// Import enums and skills array
 import { Category, skills, SkillCategory } from "@/data/skillsData";
 
-const Skills: React.FC = () => {
-  // State to keep track of the selected category
+const Skills = () => {
   const [selectedCategory, setSelectedCategory] = useState<Category | "All">(
     "All"
   );
 
-  // Handler to filter the skills based on the selected category
   const filteredSkills = (): SkillCategory[] => {
-    if (selectedCategory === "All") {
-      return skills; // Show all categories and skills
-    }
-    return skills.filter(
-      (skillCategory) => skillCategory.category === selectedCategory
-    );
+    return selectedCategory === "All"
+      ? skills
+      : skills.filter(
+          (skillCategory) => skillCategory.category === selectedCategory
+        );
   };
 
   return (
     <section className="h-[100vh] flex flex-col items-center justify-center p-4">
       <h2 className="text-4xl mb-8">My Skills</h2>
 
-      {/* Category Filter Buttons */}
       <div className="flex gap-4 mb-8">
         <button
           onClick={() => setSelectedCategory("All")}
@@ -79,16 +73,14 @@ const Skills: React.FC = () => {
         </button>
       </div>
 
-      {/* Display Filtered Skills */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="bg-white rounded w-full">
         {filteredSkills().map((skillCategory) => (
           <div key={skillCategory.category}>
-            <h3 className="text-2xl mb-4">{skillCategory.category}</h3>
             <div className="flex flex-wrap gap-2">
               {skillCategory.skills.map((skillItem) => (
                 <div
                   key={skillItem.name}
-                  className="bg-gray-100 p-4 rounded shadow-md text-center"
+                  className="bg-gray-100 p-4 rounded shadow-md text-center text-black"
                 >
                   <p>{skillItem.name}</p>
                 </div>
