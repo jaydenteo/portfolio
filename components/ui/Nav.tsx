@@ -17,7 +17,7 @@ const Nav = () => {
         href="#"
         className={clsx(
           "font-semibold text-text-base--small z-20",
-          open && "text-black"
+          open && "text-black",
         )}
       >
         Teo<sup>&copy;</sup>
@@ -31,7 +31,7 @@ const Nav = () => {
               <a key={item.name} href={item.href}>
                 {item.name}
               </a>
-            )
+            ),
         )}
       </div>
 
@@ -50,7 +50,7 @@ const Nav = () => {
       <div
         className={clsx(
           "fixed inset-0 bg-white bg-opacity-90 transition-opacity duration-300 md:hidden z-10",
-          open ? "opacity-100" : "opacity-0 pointer-events-none"
+          open ? "opacity-100" : "opacity-0 pointer-events-none",
         )}
         aria-hidden={!open}
       >

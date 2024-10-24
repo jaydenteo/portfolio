@@ -8,7 +8,7 @@ function Contact() {
       <div className="h-[100svh] sticky bottom-0 flex-col items-center justify-center">
         <div className="flex flex-col items-center justify-center h-screen text-center">
           <p className="text-heading-1 font-bold tracking-tight leading-[1.0]">
-            let's build
+            let&apos;s build
           </p>
           <p className="text-heading-1 font-bold mr-2 tracking-tight leading-[1.0]">
             something great

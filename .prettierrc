@@ -1,0 +1,5 @@
+{
+  "tabWidth": 2,
+  "xmlWhitespaceSensitivity": "ignore",
+  "plugins": ["@prettier/plugin-xml"]
+}

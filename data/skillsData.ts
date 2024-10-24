@@ -1,3 +1,30 @@
+import {
+  Aws,
+  Azure,
+  C,
+  Css,
+  Django,
+  Docker,
+  Framermotion,
+  Git,
+  Html,
+  Java,
+  Javascript,
+  Jest,
+  Nextjs,
+  Nodejs,
+  Python,
+  React,
+  Redux,
+  Scss,
+  Springboot,
+  Sql,
+  Storybook,
+  Tailwind,
+  Typescript,
+  Vscode,
+} from "@/assets/icons";
+
 export enum Category {
   ProgrammingLanguages = "Programming Languages",
   FrameworksLibraries = "Frameworks & Libraries",
@@ -23,6 +50,7 @@ export enum Skill {
   Jest = "Jest",
   Django = "Django",
   SpringBoot = "Springboot",
+  Framer = "Framer Motion",
   AWS = "AWS",
   AzurePipelines = "Azure Pipelines",
   Docker = "Docker",
@@ -33,7 +61,7 @@ export enum Skill {
 
 export interface SkillItem {
   name: Skill;
-  icon: string;
+  icon: React.ElementType;
 }
 
 export interface SkillCategory {
@@ -45,44 +73,45 @@ export const skills: SkillCategory[] = [
   {
     category: Category.ProgrammingLanguages,
     skills: [
-      { name: Skill.HTML, icon: "" },
-      { name: Skill.CSS, icon: "" },
-      { name: Skill.JavaScript, icon: "" },
-      { name: Skill.TypeScript, icon: "" },
-      { name: Skill.Python, icon: "" },
-      { name: Skill.Java, icon: "" },
-      { name: Skill.SQL, icon: "" },
-      { name: Skill.C, icon: "" }
+      { name: Skill.HTML, icon: Html },
+      { name: Skill.CSS, icon: Css },
+      { name: Skill.JavaScript, icon: Javascript },
+      { name: Skill.TypeScript, icon: Typescript },
+      { name: Skill.Python, icon: Python },
+      { name: Skill.Java, icon: Java },
+      { name: Skill.SQL, icon: Sql },
+      { name: Skill.C, icon: C }
     ]
   },
   {
     category: Category.FrameworksLibraries,
     skills: [
-      { name: Skill.React, icon: "" },
-      { name: Skill.NextJS, icon: "" },
-      { name: Skill.NodeJS, icon: "" },
-      { name: Skill.SCSS, icon: "" },
-      { name: Skill.Tailwind, icon: "" },
-      { name: Skill.Redux, icon: "" },
-      { name: Skill.Jest, icon: "" },
-      { name: Skill.Django, icon: "" },
-      { name: Skill.SpringBoot, icon: "" },
-      { name: Skill.Storybook, icon: "" }
+      { name: Skill.React, icon: React },
+      { name: Skill.NextJS, icon: Nextjs },
+      { name: Skill.NodeJS, icon: Nodejs },
+      { name: Skill.SCSS, icon: Scss },
+      { name: Skill.Tailwind, icon: Tailwind },
+      { name: Skill.Redux, icon: Redux },
+      { name: Skill.Jest, icon: Jest },
+      { name: Skill.Django, icon: Django },
+      { name: Skill.SpringBoot, icon: Springboot },
+      { name: Skill.Storybook, icon: Storybook },
+      { name: Skill.Framer, icon: Framermotion }
     ]
   },
   {
     category: Category.DevOpsCloud,
     skills: [
-      { name: Skill.AWS, icon: "" },
-      { name: Skill.AzurePipelines, icon: "" },
-      { name: Skill.Docker, icon: "" },
+      { name: Skill.AWS, icon: Aws },
+      { name: Skill.AzurePipelines, icon: Azure },
+      { name: Skill.Docker, icon: Docker },
     ]
   },
   {
     category: Category.Tools,
     skills: [
-      { name: Skill.Git, icon: "" },
-      { name: Skill.VSCode, icon: "" }
+      { name: Skill.Git, icon: Git },
+      { name: Skill.VSCode, icon: Vscode }
     ]
   }
 ];

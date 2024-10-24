@@ -3,10 +3,11 @@
 import React, { useRef, useState } from "react";
 import { Category, skills, SkillCategory } from "@/data/skillsData";
 import { motion } from "framer-motion";
+import SkillTag, { TagVariant } from "../ui/SkillTag";
 
 const Skills = () => {
   const [selectedCategory, setSelectedCategory] = useState<Category | "All">(
-    "All"
+    "All",
   );
 
   const [resetCount, setResetCount] = useState(0); // State to trigger re-renders
@@ -24,7 +25,7 @@ const Skills = () => {
     return selectedCategory === "All"
       ? skills
       : skills.filter(
-          (skillCategory) => skillCategory.category === selectedCategory
+          (skillCategory) => skillCategory.category === selectedCategory,
         );
   };
 
@@ -33,7 +34,7 @@ const Skills = () => {
   };
 
   return (
-    <section className="h-[100svh] flex flex-col items-start justify-start">
+    <section className="min-h-[100svh] flex flex-col items-start justify-start">
       <h1 className="text-heading-1 mb-8 uppercase font-bold">Tech Stack</h1>
 
       <div className="flex justify-start lg:justify-end mb-4 w-full pb-space-md">
@@ -71,7 +72,7 @@ const Skills = () => {
         </button>
       </div>
 
-      <div className="bg-neutral-800 rounded-2xl w-full h-[50svh] border-neutral-500 border-4 border-outline border-opacity-15 p-space-lg flex justify-center items-center">
+      <div className="bg-neutral-800 rounded-2xl w-full min-h-[50svh] border-neutral-500 border-4 border-outline border-opacity-15 p-space-lg flex justify-center items-center">
         <div className="h-full w-full" ref={constraintRef}>
           <div className="flex flex-wrap justify-center items-center">
             {filteredSkills().map((skillCategory) => (
@@ -88,9 +89,11 @@ const Skills = () => {
                     dragMomentum={true}
                     whileDrag={{ scale: 1.5 }}
                     whileHover={{ scale: 1.1 }}
-                    className="bg-neutral-500 p-space-2xs rounded-xl text-center text-white font-semibold m-2"
                   >
-                    <p>{skillItem.name}</p>
+                    <SkillTag
+                      skillItem={skillItem}
+                      variant={TagVariant.Primary}
+                    />
                   </motion.div>
                 ))}
               </div>
