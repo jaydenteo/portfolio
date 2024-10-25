@@ -8,7 +8,7 @@ import { skills } from "@/data/skillsData";
 
 function Projects() {
   return (
-    <section className="min-h-[300svh]" id="Works">
+    <section className="min-h-[300vh]" id="Works">
       <div className="p-space-sm md:p-space-lg">
         <h1 className="text-heading-1 uppercase font-bold">
           Selected Work
@@ -25,8 +25,8 @@ function Projects() {
         <div key={index} className={"px-space-sm md:px-space-lg"}>
           <div className="h-screen contain-paint bg-black border-t border-neutral-600">
             <div
-              className={`h-[300svh] w-full absolute left-0 right-0`}
-              style={{ top: `${-100 * index}svh` }} // tailwind does not support dynamic classes :(
+              className={`h-[300vh] w-full absolute left-0 right-0`}
+              style={{ top: `${-100 * index}vh` }} // tailwind does not support dynamic classes :(
             >
               <div className="sticky top-0 h-screen flex justify-between flex-col lg:flex-row">
                 <div className="flex flex-col justify-center h-1/3 lg:h-full lg:w-1/2">
