@@ -1,9 +1,12 @@
+import { AmpolBg, Ampolcard, OfficeBg, Portfolio, UniBg, Unipark } from "@/assets/images";
 import { Skill } from "./skillsData";
+import { StaticImageData } from "next/image";
 
 interface Project {
   title: string;
   skills: Skill[]; 
-  image: string;
+  image: StaticImageData;
+  backgroundImage: StaticImageData;
   link?: string;
   code?: string;
 }
@@ -11,23 +14,23 @@ interface Project {
 export const projects: Project[] = [
   {
     title: "Ampol Card Portal",
-    skills: [Skill.React, Skill.AzurePipelines, Skill.Redux, Skill.JavaScript, Skill.CSS, Skill.SCSS],
-    image: "/assets/project1.png",
-    link: "https://live-site-one.com",
-    code: "https://github.com/project-one"
+    skills: [Skill.React, Skill.AzurePipelines, Skill.Redux, Skill.JavaScript, Skill.TypeScript, Skill.CSS, Skill.SCSS, Skill.HTML, Skill.Jest, Skill.Tailwind, Skill.Storybook, Skill.Git, Skill.VSCode],
+    image: Ampolcard,
+    backgroundImage: AmpolBg,
+    link: "https://www.ampol.com.au/business/products-and-services/fuel-cards",
   },
   {
-    title: "Project Two",
-    skills: [Skill.Python, Skill.Django, Skill.AWS],
-    image: "/assets/project2.png",
-    link: "https://live-site-two.com",
-    code: "https://github.com/project-two"
+    title: "Portfolio",
+    skills: [Skill.NextJS, Skill.Tailwind, Skill.TypeScript, Skill.HTML, Skill.Git, Skill.VSCode],
+    image: Portfolio,
+    backgroundImage: OfficeBg,
+    code: "https://github.com/jaydenteo/portfolio"
   },
   {
-    title: "Project Three",
+    title: "UWA VIP Parking",
     skills: [Skill.TypeScript, Skill.NextJS, Skill.Tailwind],
-    image: "/assets/project3.png",
-    link: "https://live-site-three.com",
-    code: "https://github.com/project-three"
+    image: Unipark,
+    backgroundImage: UniBg,
+    code: "https://github.com/zollf/CITS3200"
   }
 ];

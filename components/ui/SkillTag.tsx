@@ -15,8 +15,10 @@ const SkillTag = ({ skillItem, variant }: SkillTagProps) => {
   return (
     <div
       className={clsx(
-        "flex items-center bg-neutral-500 p-space-2xs rounded-xl text-center text-white font-semibold m-2",
-        variant === TagVariant.Primary ? "p-space-2xs" : "p-space-3xs",
+        "flex items-center bg-neutral-500 p-space-2xs rounded-xl text-center text-white font-semibold",
+        variant === TagVariant.Primary
+          ? "p-space-2xs"
+          : "px-space-xs py-space-3xs rounded-xs",
       )}
     >
       {variant === TagVariant.Primary && (

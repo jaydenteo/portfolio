@@ -7,6 +7,7 @@ import {
   Docker,
   Framermotion,
   Git,
+  Github,
   Html,
   Java,
   Javascript,
@@ -56,6 +57,7 @@ export enum Skill {
   Docker = "Docker",
   Storybook = "Storybook",
   Git = "Git",
+  GitHub = "GitHub",
   VSCode = "VSCode"
 }
 
@@ -105,6 +107,7 @@ export const skills: SkillCategory[] = [
       { name: Skill.AWS, icon: Aws },
       { name: Skill.AzurePipelines, icon: Azure },
       { name: Skill.Docker, icon: Docker },
+      { name: Skill.GitHub, icon: Github },
     ]
   },
   {

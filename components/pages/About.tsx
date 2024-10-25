@@ -2,7 +2,7 @@ import React from "react";
 
 function About() {
   return (
-    <section className="h-[80svh] flex flex-col lg:flex-row">
+    <section className="px-space-lg h-[80svh] flex flex-col lg:flex-row">
       <div className="w-full lg:w-1/2">
         <h2 className="text-heading-1 font-bold">
           Consultant <br /> Developer <br /> Engineer

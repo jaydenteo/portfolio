@@ -6,6 +6,7 @@ import Django from './django.svg';
 import Docker from './docker.svg';
 import Framermotion from './framermotion.svg';
 import Git from './git.svg';
+import Github from './github.svg'
 import Html from './html.svg';
 import Java from './java.svg';
 import Javascript from './javascript.svg';
@@ -33,6 +34,7 @@ export {
   Docker,
   Framermotion,
   Git,
+  Github,
   Html,
   Java,
   Javascript,
