@@ -75,32 +75,40 @@ function Projects() {
                   </div>
                 </div>
                 {/* IMAGE */}
+                {/* IMAGE */}
                 <div className="relative flex justify-center items-center h-2/3 lg:w-1/2 lg:h-full px-space-md py-space-md lg:py-space-3xl">
-                  <div className="relative w-full h-full">
-                    {/* First Image (Background) */}
-                    <Image
-                      src={project.backgroundImage}
-                      alt="Background Image"
-                      layout="fill"
-                      objectFit="cover"
-                      className="rounded-xl absolute top-0 left-0 opacity-80"
-                      placeholder="blur"
-                    />
+                  <a
+                    href={project.link || project.code}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="relative w-full h-full"
+                  >
+                    <div className="relative w-full h-full">
+                      {/* First Image (Background) */}
+                      <Image
+                        src={project.backgroundImage}
+                        alt="Background Image"
+                        layout="fill"
+                        objectFit="cover"
+                        className="rounded-xl absolute top-0 left-0 opacity-80"
+                        placeholder="blur"
+                      />
 
-                    {/* Second Image (Overlay) */}
-                    <div className="absolute inset-0 flex justify-center items-center">
-                      <div className="relative w-[80vw] h-[80vw] max-w-lg max-h-lg">
-                        <Image
-                          src={project.image}
-                          alt={project.title}
-                          layout="fill"
-                          objectFit="contain"
-                          className="z-10"
-                          placeholder="blur"
-                        />
+                      {/* Second Image (Overlay) */}
+                      <div className="absolute inset-0 flex justify-center items-center">
+                        <div className="relative w-[80vw] h-[80vw] max-w-lg max-h-lg">
+                          <Image
+                            src={project.image}
+                            alt={project.title}
+                            layout="fill"
+                            objectFit="contain"
+                            className="z-10"
+                            placeholder="blur"
+                          />
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  </a>
                 </div>
               </div>
             </div>

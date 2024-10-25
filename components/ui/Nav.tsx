@@ -39,7 +39,9 @@ const Nav = () => {
       <div className="md:hidden z-20">
         <button
           onClick={toggleMenu}
-          className={clsx("text-xl focus:outline-none", open && "text-black")}
+          className={clsx(
+            "w-12 h-12 rounded-full bg-purple-600 text-white flex items-center justify-center text-xl focus:outline-none",
+          )}
           aria-label="Toggle menu"
         >
           {open ? "✕" : "☰"}
@@ -49,24 +51,24 @@ const Nav = () => {
       {/* Mobile */}
       <div
         className={clsx(
-          "fixed inset-0 bg-white bg-opacity-90 transition-opacity duration-300 md:hidden z-10",
+          "fixed inset-0 bg-white transition-opacity duration-300 md:hidden z-10",
           open ? "opacity-100" : "opacity-0 pointer-events-none",
         )}
         aria-hidden={!open}
       >
-        <div className="container h-full flex flex-col items-start justify-center">
+        <div className="container h-full flex flex-col items-start justify-center gap-space-xs">
           {navItems.map((item) => (
             <a
               key={item.name}
               href={item.href}
-              className="nav-item text-7xl mb-4 font-bold"
+              className="nav-item text-7xl font-bold j"
               onClick={toggleMenu}
             >
               {item.name}
             </a>
           ))}
           <div className="uppercase">Get in touch</div>
-          <div className="flex flex-col mt-8">
+          <div className="flex flex-col">
             {socials.map(({ name, href, displayName }) => (
               <a
                 key={name}
@@ -75,7 +77,7 @@ const Nav = () => {
                 target={name === "Email" ? "_self" : "_blank"}
                 rel={name === "Email" ? undefined : "noopener noreferrer"}
               >
-                {displayName || name}
+                {displayName || name}&nbsp;&#8599;
               </a>
             ))}
           </div>
