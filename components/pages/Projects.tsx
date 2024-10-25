@@ -26,7 +26,7 @@ function Projects() {
           <div className="h-screen contain-paint bg-black border-t border-neutral-600">
             <div
               className={`h-[300svh] w-full absolute left-0 right-0`}
-              style={{ top: `${-100 * index}vh` }} // tailwind does not support dynamic classes :(
+              style={{ top: `${-100 * index}svh` }} // tailwind does not support dynamic classes :(
             >
               <div className="sticky top-0 h-screen flex justify-between flex-col lg:flex-row">
                 <div className="flex flex-col justify-center h-1/3 lg:h-full lg:w-1/2">

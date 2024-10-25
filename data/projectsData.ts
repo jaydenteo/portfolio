@@ -31,6 +31,7 @@ export const projects: Project[] = [
     skills: [Skill.NextJS, Skill.Tailwind, Skill.TypeScript, Skill.HTML, Skill.Git, Skill.VSCode],
     image: Portfolio,
     backgroundImage: OfficeBg,
+    link: "https://www.jaydenteo.com",
     code: "https://github.com/jaydenteo/portfolio"
   },
 ];
