@@ -6,7 +6,7 @@ function Hero() {
   return (
     <section className="mb-[-100svh]">
       <div className="h-svh sticky top-0 flex items-center justify-center w-full">
-        <div className="w-full p-space-lg">
+        <div className="w-full p-space-sm md:p-space-lg">
           <Logo className="uppercase" />
           <p className="pt-space-md text-text-base--large">
             Software Engineer at Accenture

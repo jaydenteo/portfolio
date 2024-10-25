@@ -9,7 +9,7 @@ import { skills } from "@/data/skillsData";
 function Projects() {
   return (
     <section className="min-h-[300svh]" id="Works">
-      <div className="p-space-lg">
+      <div className="p-space-sm md:p-space-lg">
         <h1 className="text-heading-1 uppercase font-bold">
           Selected Work
           <sup className="">&nbsp;{projects.length}</sup>
@@ -22,7 +22,7 @@ function Projects() {
       </div>
 
       {projects.map((project, index) => (
-        <div key={index} className={"px-space-lg"}>
+        <div key={index} className={"px-space-sm md:px-space-lg"}>
           <div className="h-screen contain-paint bg-black border-t border-neutral-600">
             <div
               className={`h-[300svh] w-full absolute left-0 right-0`}
@@ -35,7 +35,7 @@ function Projects() {
                     {index + 1}. {project.title}
                   </div>
                   {/* SKILLS */}
-                  <div className="right-space-lg flex flex-col justify-center">
+                  <div className="right-space-sm md:right-space-lg flex flex-col justify-center">
                     <div className="flex flex-wrap gap-space-3xs">
                       {project.skills.map((skillName, idx) => {
                         const skill = skills

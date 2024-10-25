@@ -35,26 +35,11 @@
     1.496rem + 2.2854vi,
     3.5529rem
   ); /* ~31px - 57px */
-  --heading-1: clamp(3.5rem, 2.3571rem + 5.5143vi, 10.5rem); /* ~56px - 120px */
+  --heading-1: clamp(2.5rem, 2rem + 5.5143vi, 10.5rem); /* ~56px - 120px */
   --heading-display: clamp(4rem, 0.05rem + 12.5vi, 20rem); /* ~64px - 160px */
   --heading-body: clamp(1rem, 0.6071rem + 1.0143vi, 2.25rem); /* ~16px - 36px */
   --heading-1--alt: clamp(3rem, 2.25rem + 3.75vi, 5.625rem); /* ~48px - 90px */
   --text-menu: clamp(2.5rem, 1.107rem + 3.5714vi, 4.5rem); /* ~40px - 72px */
-
-  /* Padding & Spacing */
-
-  --padding-horizontal--main: clamp(
-    1rem,
-    0.428rem + 2.86vw,
-    3rem
-  ); /* ~16px - 48px */
-  --padding-v: clamp(0.89rem, 0.862rem + 0.14vw, 0.99rem); /* ~14px - 16px */
-  --padding-button: clamp(0.89rem, 0.7rem + 0.14vw, 0.88rem); /* ~14px - 14px */
-  --padding-top--main: clamp(
-    1rem,
-    1.8571rem + 1.5143vi,
-    3.5rem
-  ); /* ~16px - 56px */
 
   /* Spacing */
 
@@ -84,15 +69,6 @@
     6.25rem
   ); /* ~84px - 100px */
   --gap-fluid: clamp(1rem, 0.8571rem + 1.0143vi, 3.5rem); /* ~16px - 56px */
-
-  /* Grid Settings */
-
-  --column-count: 12;
-  --grid-main: repeat(var(--column-count), minmax(0, 1fr));
-  --grid-gap-total: calc(var(--gap-fluid) * (var(--column-count) - 1));
-  --column-width: calc(
-    (100% - var(--grid-gap-total)) / var(--column-count) + var(--gap-fluid)
-  );
 }
 
 /* @layer base {
@@ -100,7 +76,3 @@
     @apply px-4;
   }
 } */
-
-.clip-path {
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-}

@@ -34,12 +34,6 @@ const config: Config = {
         'heading-1--alt': 'var(--heading-1--alt)',
         'text-menu': 'var(--text-menu)',
       },
-      padding: {
-        'horizontal-main': 'var(--padding-horizontal--main)',
-        'v': 'var(--padding-v)',
-        'button': 'var(--padding-button)',
-        'top-main': 'var(--padding-top--main)',
-      },
       spacing: {
         'space-3xs': 'var(--space-3xs)',
         'space-2xs': 'var(--space-2xs)',

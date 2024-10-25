@@ -35,7 +35,7 @@ const Skills = () => {
 
   return (
     <section
-      className="px-space-lg min-h-[100svh] flex flex-col items-start justify-start"
+      className="px-space-sm md:px-space-lg min-h-[100svh] flex flex-col items-start justify-start"
       id="Stack"
     >
       <h1 className="text-heading-1 mb-8 uppercase font-bold">Tech Stack</h1>
@@ -50,12 +50,12 @@ const Skills = () => {
 
       <hr className="border-t border-neutral-600 w-full" />
 
-      <div className="flex flex-wrap gap-4 py-space-lg">
+      <div className="flex flex-wrap gap-4 py-space-sm md:py-space-lg">
         {categories.map((category) => (
           <button
             key={category}
             onClick={() => setSelectedCategory(category)}
-            className={`px-4 py-2 ${
+            className={`px-2 py-1 text-text-mono md:px-4 md:py-2 md:text-text-base--small ${
               selectedCategory === category
                 ? "bg-purple-700 text-white"
                 : "bg-neutral-500"
@@ -69,13 +69,13 @@ const Skills = () => {
         ))}
         <button
           onClick={handleReset}
-          className="px-4 py-2 bg-neutral-500 text-white rounded font-bold"
+          className="px-2 py-1 text-text-mono md:px-4 md:py-2 md:text-text-base--small bg-neutral-500 text-white rounded font-bold"
         >
           Reset Positions
         </button>
       </div>
 
-      <div className="bg-neutral-800 rounded-2xl w-full min-h-[50svh] border-neutral-500 border-4 border-outline border-opacity-15 p-space-lg flex flex-col items-center">
+      <div className="bg-neutral-800 rounded-2xl w-full min-h-[50svh] border-neutral-500 border-4 border-outline border-opacity-15 p-space-sm md:p-space-lg flex flex-col items-center">
         <div
           className="w-full flex-grow flex items-center justify-center"
           ref={constraintRef}

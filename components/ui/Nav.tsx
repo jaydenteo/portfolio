@@ -16,7 +16,7 @@ const Nav = () => {
       <a
         href="#"
         className={clsx(
-          "font-semibold text-text-base--small z-20",
+          "font-semibold text-text-base--small z-20 hidden md:block",
           open && "text-black",
         )}
       >
@@ -36,7 +36,7 @@ const Nav = () => {
       </div>
 
       {/* Mobile Button */}
-      <div className="md:hidden z-20">
+      <div className="md:hidden z-20 fixed top-6 right-6">
         <button
           onClick={toggleMenu}
           className={clsx(

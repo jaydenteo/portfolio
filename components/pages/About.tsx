@@ -3,7 +3,7 @@ import React from "react";
 function About() {
   return (
     <section
-      className="px-space-lg h-[80svh] flex flex-col lg:flex-row"
+      className="px-space-sm md:px-space-lg h-[80svh] flex flex-col lg:flex-row"
       id="About"
     >
       <div className="w-full lg:w-1/2">
