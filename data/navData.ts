@@ -11,10 +11,10 @@ interface Socials {
 
 export const navItems: NavItem[] = [
   { name: "Home", href: "#" },
-  { name: "Stack", href: "#" },
-  { name: "Works", href: "#" },
-  { name: "About", href: "#" },
-  { name: "Contact", href: "#" },
+  { name: "Stack", href: "#Stack" },
+  { name: "Works", href: "#Works" },
+  { name: "About", href: "#About" },
+  { name: "Contact", href: "#Contact" },
 ];
 
 export const socials: Socials[] = [

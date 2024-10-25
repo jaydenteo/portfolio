@@ -1,7 +1,6 @@
 "use client";
 
 import { projects } from "@/data/projectsData";
-import clsx from "clsx";
 import React from "react";
 import Image from "next/image";
 import SkillTag, { TagVariant } from "../ui/SkillTag";
@@ -9,92 +8,99 @@ import { skills } from "@/data/skillsData";
 
 function Projects() {
   return (
-    <section className="min-h-[300svh]">
-      <h1 className="text-heading-1 mb-8 uppercase font-bold">Selected Work</h1>
+    <section className="min-h-[300svh]" id="Works">
+      <div className="p-space-lg">
+        <h1 className="text-heading-1 uppercase font-bold">
+          Selected Work
+          <sup className="">&nbsp;{projects.length}</sup>
+        </h1>
+        <div className="flex justify-start lg:justify-end mb-4 w-full pb-space-md">
+          <p className="w-full lg:w-1/2 text-gray-300 text-text-base">
+            A collection of some of my most notable projects.
+          </p>
+        </div>
+      </div>
 
       {projects.map((project, index) => (
-        <div
-          key={index}
-          className={clsx(
-            `px-space-lg h-screen z-20 w-screen inset-0 section-padding grid grid-cols-12 gap-6 items-center background-image sticky contain-paint top-0`,
-          )}
-          style={{
-            backgroundImage: `url(${project.backgroundImage.src})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-          }}
-        >
-          <div className="absolute inset-0 z-10 bg-black opacity-50"></div>
-          {/* Left - Title */}
-          <div
-            className="h-screen w-screen absolute left-0 right-0 z-20"
-            style={{ height: "300svh", top: `${-100 * index}vh` }}
-          >
-            <div className="sticky top-0 h-screen flex justify-between">
-              <div className="ml-space-lg w-1/4 flex items-center text-heading-2 tracking-heading z-30 font-bold">
-                {project.title}
-              </div>
-              {/* Middle - Small Image */}
-              <div className="relative z-30 flex justify-center items-center w-1/4 h-full">
-                <div
-                  className="relative w-full h-0"
-                  style={{ paddingBottom: "55.56%" }}
-                >
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    layout="fill"
-                    objectFit="cover"
-                    className="rounded-xl absolute top-0 left-0" // Add rounded corners if desired
-                    placeholder="blur"
-                    blurDataURL={`data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 100 100"><rect width="100%" height="100%" fill="${
-                      index === 0
-                        ? "#f0f0f0"
-                        : index === 1
-                          ? "#d0e0f0"
-                          : "#c0f0d0"
-                    }"/></svg>`}
-                  />
+        <div key={index} className={"px-space-lg"}>
+          <div className="h-screen contain-paint bg-black border-t border-neutral-600">
+            <div
+              className={`h-[300svh] w-full absolute left-0 right-0`}
+              style={{ top: `${-100 * index}vh` }} // tailwind does not support dynamic classes :(
+            >
+              <div className="sticky top-0 h-screen flex justify-between flex-col lg:flex-row">
+                <div className="flex flex-col justify-center h-1/3 lg:h-full lg:w-1/2">
+                  {/* TITLE */}
+                  <div className="flex items-center text-heading-2 tracking-heading font-bold">
+                    {index + 1}. {project.title}
+                  </div>
+                  {/* SKILLS */}
+                  <div className="right-space-lg flex flex-col justify-center">
+                    <div className="flex flex-wrap gap-space-3xs">
+                      {project.skills.map((skillName, idx) => {
+                        const skill = skills
+                          .flatMap((category) => category.skills)
+                          .find((s) => s.name === skillName);
+                        return skill ? (
+                          <SkillTag
+                            key={idx}
+                            skillItem={skill}
+                            variant={TagVariant.Secondary}
+                          />
+                        ) : null;
+                      })}
+                    </div>
+                    <div className="mt-space-md mr-space-md">
+                      {project.link && (
+                        <a
+                          href={project.link}
+                          className="text-white underline block"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Live Site
+                        </a>
+                      )}
+                      {project.code && (
+                        <a
+                          href={project.code}
+                          className="text-white underline block"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Source Code
+                        </a>
+                      )}
+                    </div>
+                  </div>
                 </div>
-              </div>
-              {/* Right - Skills, Links */}
-              <div className="right-space-lg  w-1/4 flex flex-col z-30 justify-center">
-                <div className="flex flex-wrap gap-space-3xs">
-                  {project.skills.map((skillName, idx) => {
-                    const skill = skills
-                      .flatMap((category) => category.skills)
-                      .find((s) => s.name === skillName);
-                    return skill ? (
-                      <SkillTag
-                        key={idx}
-                        skillItem={skill}
-                        variant={TagVariant.Secondary}
-                      />
-                    ) : null; // Handle the case where the skill is not found
-                  })}
-                </div>
-                <div className="mt-4">
-                  {project.link && (
-                    <a
-                      href={project.link}
-                      className="text-blue-500 underline block"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Live Site
-                    </a>
-                  )}
-                  {project.code && (
-                    <a
-                      href={project.code}
-                      className="text-blue-500 underline block mt-2"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Source Code
-                    </a>
-                  )}
+                {/* IMAGE */}
+                <div className="relative flex justify-center items-center h-2/3 lg:w-1/2 lg:h-full px-space-md py-space-md lg:py-space-3xl">
+                  <div className="relative w-full h-full">
+                    {/* First Image (Background) */}
+                    <Image
+                      src={project.backgroundImage}
+                      alt="Background Image"
+                      layout="fill"
+                      objectFit="cover"
+                      className="rounded-xl absolute top-0 left-0 opacity-80"
+                      placeholder="blur"
+                    />
+
+                    {/* Second Image (Overlay) */}
+                    <div className="absolute inset-0 flex justify-center items-center">
+                      <div className="relative w-[80vw] h-[80vw] max-w-lg max-h-lg">
+                        <Image
+                          src={project.image}
+                          alt={project.title}
+                          layout="fill"
+                          objectFit="contain"
+                          className="z-10"
+                          placeholder="blur"
+                        />
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

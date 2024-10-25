@@ -24,6 +24,9 @@ import Storybook from './storybook.svg';
 import Tailwind from './tailwind.svg';
 import Typescript from './typescript.svg';
 import Vscode from './vscode.svg';
+import Hyperlink from './hyperlink.svg';
+import Linkedin from './linkedin.svg';
+import Mail from './mail.svg';
 
 export {
   Aws,
@@ -52,4 +55,7 @@ export {
   Tailwind,
   Typescript,
   Vscode,
+  Hyperlink,
+  Linkedin,
+  Mail,
 };

@@ -34,7 +34,10 @@ const Skills = () => {
   };
 
   return (
-    <section className="px-space-lg min-h-[100svh] flex flex-col items-start justify-start">
+    <section
+      className="px-space-lg min-h-[100svh] flex flex-col items-start justify-start"
+      id="Stack"
+    >
       <h1 className="text-heading-1 mb-8 uppercase font-bold">Tech Stack</h1>
 
       <div className="flex justify-start lg:justify-end mb-4 w-full pb-space-md">
@@ -73,7 +76,10 @@ const Skills = () => {
       </div>
 
       <div className="bg-neutral-800 rounded-2xl w-full min-h-[50svh] border-neutral-500 border-4 border-outline border-opacity-15 p-space-lg flex flex-col items-center">
-        <div className="h-full flex-grow flex items-center" ref={constraintRef}>
+        <div
+          className="w-full flex-grow flex items-center justify-center"
+          ref={constraintRef}
+        >
           <div className="flex flex-wrap justify-center items-center gap-space-sm">
             {filteredSkills().map((skillCategory) => (
               <div

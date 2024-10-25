@@ -20,17 +20,17 @@ export const projects: Project[] = [
     link: "https://www.ampol.com.au/business/products-and-services/fuel-cards",
   },
   {
+    title: "UWA VIP Parking",
+    skills: [Skill.TypeScript, Skill.React, Skill.SCSS, Skill.Django, Skill.Docker, Skill.Git, Skill.VSCode],
+    image: Unipark,
+    backgroundImage: UniBg,
+    code: "https://github.com/zollf/CITS3200"
+  },
+  {
     title: "Portfolio",
     skills: [Skill.NextJS, Skill.Tailwind, Skill.TypeScript, Skill.HTML, Skill.Git, Skill.VSCode],
     image: Portfolio,
     backgroundImage: OfficeBg,
     code: "https://github.com/jaydenteo/portfolio"
   },
-  {
-    title: "UWA VIP Parking",
-    skills: [Skill.TypeScript, Skill.NextJS, Skill.Tailwind],
-    image: Unipark,
-    backgroundImage: UniBg,
-    code: "https://github.com/zollf/CITS3200"
-  }
 ];
