@@ -27,6 +27,8 @@ import Vscode from './vscode.svg';
 import Hyperlink from './hyperlink.svg';
 import Linkedin from './linkedin.svg';
 import Mail from './mail.svg';
+import Mongodb from './mongodb.svg';
+import Bitbucket from './bitbucket.svg';
 
 export {
   Aws,
@@ -58,4 +60,6 @@ export {
   Hyperlink,
   Linkedin,
   Mail,
+  Bitbucket,
+  Mongodb,
 };

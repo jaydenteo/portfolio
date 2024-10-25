@@ -1,6 +1,7 @@
 import {
   Aws,
   Azure,
+  Bitbucket,
   C,
   Css,
   Django,
@@ -12,6 +13,7 @@ import {
   Java,
   Javascript,
   Jest,
+  Mongodb,
   Nextjs,
   Nodejs,
   Python,
@@ -58,7 +60,9 @@ export enum Skill {
   Storybook = "Storybook",
   Git = "Git",
   GitHub = "GitHub",
-  VSCode = "VSCode"
+  VSCode = "VSCode",
+  MongoDB = "MongoDB",
+  Bitbucket = "Bitbucket",
 }
 
 export interface SkillItem {
@@ -82,7 +86,8 @@ export const skills: SkillCategory[] = [
       { name: Skill.Python, icon: Python },
       { name: Skill.Java, icon: Java },
       { name: Skill.SQL, icon: Sql },
-      { name: Skill.C, icon: C }
+      { name: Skill.C, icon: C },
+      { name: Skill.MongoDB, icon: Mongodb}
     ]
   },
   {
@@ -108,6 +113,7 @@ export const skills: SkillCategory[] = [
       { name: Skill.AzurePipelines, icon: Azure },
       { name: Skill.Docker, icon: Docker },
       { name: Skill.GitHub, icon: Github },
+      { name: Skill.Bitbucket, icon: Bitbucket},
     ]
   },
   {
