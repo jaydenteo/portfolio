@@ -75,7 +75,6 @@ function Projects() {
                   </div>
                 </div>
                 {/* IMAGE */}
-                {/* IMAGE */}
                 <div className="relative flex justify-center items-center h-2/3 lg:w-1/2 lg:h-full px-space-md py-space-md lg:py-space-3xl">
                   <a
                     href={project.link || project.code}
@@ -88,8 +87,8 @@ function Projects() {
                       <Image
                         src={project.backgroundImage}
                         alt="Background Image"
-                        layout="fill"
-                        objectFit="cover"
+                        fill
+                        style={{ objectFit: "cover" }}
                         className="rounded-xl absolute top-0 left-0 opacity-80"
                         placeholder="blur"
                       />
@@ -100,8 +99,8 @@ function Projects() {
                           <Image
                             src={project.image}
                             alt={project.title}
-                            layout="fill"
-                            objectFit="contain"
+                            fill
+                            style={{ objectFit: "contain" }}
                             className="z-10"
                             placeholder="blur"
                           />
