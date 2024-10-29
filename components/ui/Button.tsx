@@ -14,7 +14,7 @@ const Button = ({ className }: ButtonProps) => {
     <a href={emailLink} target="_blank" rel="noopener noreferrer">
       <button
         className={clsx(
-          "px-space-lg py-space-sm bg-purple-700 text-white font-bold rounded-full uppercase",
+          "px-space-lg py-space-sm bg-purple-700 text-white text-text-base--small font-bold rounded-full uppercase",
           className,
         )}
       >
