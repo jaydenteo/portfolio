@@ -1,7 +1,11 @@
 import React from "react";
 import Button from "../ui/Button";
+import { socials } from "@/data/navData";
 
 function Contact() {
+  const emailLink =
+    socials.find((social) => social.name === "Email")?.href || "#";
+
   return (
     <section className="mt-[-100svh]">
       <div className="h-[100svh]" />
@@ -17,7 +21,7 @@ function Contact() {
             together
           </p>
           <div className="mt-space-lg">
-            <Button />
+            <Button href={emailLink}>Get in touch</Button>
           </div>
         </div>
       </div>

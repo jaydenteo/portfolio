@@ -4,6 +4,9 @@ import Button from "../ui/Button";
 import { socials } from "@/data/navData";
 
 function Hero() {
+  const emailLink =
+    socials.find((social) => social.name === "Email")?.href || "#";
+
   return (
     <section className="mb-[-100svh]">
       <div className="h-svh sticky top-0 flex items-center justify-center w-full">
@@ -13,7 +16,7 @@ function Hero() {
             Software Engineer at Accenture
           </p>
           <div className="py-space-md">
-            <Button />
+            <Button href={emailLink}>Get in touch</Button>
           </div>
           <div className="flex gap-space-xs">
             {socials.map(
