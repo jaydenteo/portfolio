@@ -1,15 +1,15 @@
 import clsx from "clsx";
 import React from "react";
 
-interface ButtonProps {
+interface Props {
   className?: string;
   href?: string;
   children: React.ReactNode;
 }
 
-const Button = ({ className, href, children }: ButtonProps) => {
+const Button = ({ className, href, children }: Props) => {
   const baseClasses = clsx(
-    "px-space-lg py-space-sm bg-purple-700 text-white text-text-base--small font-bold rounded-full uppercase inline-block",
+    "px-space-lg py-space-sm bg-purple-700 text-white text-text-base--small font-bold rounded-full uppercase inline-block hover:scale-110",
     className,
   );
 

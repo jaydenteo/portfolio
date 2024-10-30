@@ -6,12 +6,12 @@ export enum TagVariant {
   Primary = "primary",
   Secondary = "secondary",
 }
-interface SkillTagProps {
+interface Props {
   skillItem: SkillItem;
   variant: TagVariant;
 }
 
-const SkillTag = ({ skillItem, variant }: SkillTagProps) => {
+const SkillTag = ({ skillItem, variant }: Props) => {
   return (
     <div
       className={clsx(

@@ -49,7 +49,7 @@ const Nav = () => {
       <a
         href="#"
         className={clsx(
-          "font-semibold z-20 hidden md:block",
+          "font-semibold z-20 hidden md:block hover:scale-110",
           open && "text-black",
           navColor, // Apply the dynamic text color
         )}
@@ -65,7 +65,7 @@ const Nav = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className={navColor} // Apply the dynamic text color
+                className={clsx("hover:scale-110", navColor)} // Apply the dynamic text color
               >
                 {item.name}
               </a>

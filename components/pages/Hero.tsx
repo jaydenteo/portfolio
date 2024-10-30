@@ -30,6 +30,7 @@ function Hero() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="hover:scale-110"
                   >
                     <social.icon className="w-8 h-8" />
                   </a>
