@@ -2,6 +2,7 @@ import React from "react";
 import { Logo } from "@/assets/icons";
 import Button from "../ui/Button";
 import { socials } from "@/data/navData";
+import Reveal from "../ui/Reveal";
 
 function Hero() {
   const emailLink =
@@ -10,11 +11,13 @@ function Hero() {
   return (
     <section className="mb-[-100svh]">
       <div className="h-svh sticky top-0 flex items-center justify-center w-full">
-        <div className="w-full p-space-sm md:p-space-lg">
+        <Reveal direction="up" className="w-full p-space-sm md:p-space-lg">
           <Logo className="uppercase" />
-          <p className="text-text-base--large">
+
+          <div className="text-text-base--large">
             Software Engineer at Accenture
-          </p>
+          </div>
+
           <div className="py-space-md">
             <Button href={emailLink}>Get in touch</Button>
           </div>
@@ -33,7 +36,7 @@ function Hero() {
                 ),
             )}
           </div>
-        </div>
+        </Reveal>
       </div>
       <div className="h-[100svh]" />
     </section>

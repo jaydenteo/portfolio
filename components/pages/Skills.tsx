@@ -4,6 +4,7 @@ import React, { useRef, useState } from "react";
 import { Category, skills, SkillCategory } from "@/data/skillsData";
 import { motion } from "framer-motion";
 import SkillTag, { TagVariant } from "../ui/SkillTag";
+import Reveal from "../ui/Reveal";
 
 const Skills = () => {
   const [selectedCategory, setSelectedCategory] = useState<Category | "All">(
@@ -38,15 +39,16 @@ const Skills = () => {
       className="px-space-sm md:px-space-lg min-h-[100svh] flex flex-col items-start justify-start"
       id="Stack"
     >
-      <h1 className="text-heading-1 mb-8 uppercase font-bold">Tech Stack</h1>
-
-      <div className="flex justify-start lg:justify-end mb-4 w-full pb-space-md">
-        <p className="w-full lg:w-1/2 text-gray-300 text-text-base">
-          Explore the tools and technologies that form the foundation of my
-          work. Each category highlights the core skills I&apos;ve honed across
-          various projects.
-        </p>
-      </div>
+      <Reveal direction="up">
+        <h1 className="text-heading-1 mb-8 uppercase font-bold">Tech Stack</h1>
+        <div className="flex justify-start lg:justify-end mb-4 w-full pb-space-md">
+          <div className="w-full lg:w-1/2 text-gray-300 text-text-base">
+            Explore the tools and technologies that form the foundation of my
+            work. Each category highlights the core skills I&apos;ve honed
+            across various projects.
+          </div>
+        </div>
+      </Reveal>
 
       <hr className="border-t border-neutral-600 w-full" />
 

@@ -5,21 +5,22 @@ import React from "react";
 import Image from "next/image";
 import SkillTag, { TagVariant } from "../ui/SkillTag";
 import { skills } from "@/data/skillsData";
+import Reveal from "../ui/Reveal";
 
 function Projects() {
   return (
     <section className="min-h-[300vh]" id="Works">
-      <div className="p-space-sm md:p-space-lg">
+      <Reveal direction="up" className="p-space-sm md:p-space-lg">
         <h1 className="text-heading-1 uppercase font-bold">
           Selected Work
           <sup className="">&nbsp;{projects.length}</sup>
         </h1>
         <div className="flex justify-start lg:justify-end mb-4 w-full pb-space-md">
-          <p className="w-full lg:w-1/2 text-gray-300 text-text-base">
+          <div className="w-full lg:w-1/2 text-gray-300 text-text-base">
             A collection of some of my most notable projects.
-          </p>
+          </div>
         </div>
-      </div>
+      </Reveal>
 
       {projects.map((project, index) => (
         <div key={index} className={"px-space-sm md:px-space-lg"}>
