@@ -1,16 +1,42 @@
 "use client";
 
 import { navItems, socials } from "@/data/navData";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { clsx } from "clsx";
 
 const Nav = () => {
   const [open, setOpen] = useState(false);
+  const [navColor, setNavColor] = useState("text-black"); // Default to black text
 
   const toggleMenu = () => {
     setOpen((prev) => !prev);
   };
+
+  const handleScroll = () => {
+    const scrollY = window.scrollY;
+    const windowHeight = window.innerHeight;
+    const totalHeight = document.body.scrollHeight;
+
+    // Determine the scroll position for the conditions
+    if (scrollY < windowHeight * 0.95) {
+      setNavColor("text-black"); // Black text until 95vh
+    } else if (
+      scrollY >= windowHeight * 0.95 &&
+      scrollY < totalHeight - windowHeight * 1.2
+    ) {
+      setNavColor("text-white"); // White text between 95vh and 120vh from bottom
+    } else {
+      setNavColor("text-black"); // Black text when at the Contact section (after 120vh)
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   // Aggressive bounce animation variants
   const bounceVariant = {
@@ -23,19 +49,24 @@ const Nav = () => {
       <a
         href="#"
         className={clsx(
-          "font-semibold text-text-base--small z-20 hidden md:block",
+          "font-semibold z-20 hidden md:block",
           open && "text-black",
+          navColor, // Apply the dynamic text color
         )}
       >
         Teo<sup>&copy;</sup>
       </a>
 
       {/* Desktop */}
-      <div className="hidden md:flex space-x-4 text-text-base--small">
+      <div className="hidden md:flex space-x-4">
         {navItems.map(
           (item) =>
             item.name !== "Home" && (
-              <a key={item.name} href={item.href}>
+              <a
+                key={item.name}
+                href={item.href}
+                className={navColor} // Apply the dynamic text color
+              >
                 {item.name}
               </a>
             ),

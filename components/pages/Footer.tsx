@@ -3,10 +3,13 @@ import React from "react";
 
 function Footer() {
   return (
-    <footer className="bg-black text-white px-space-lg py-space-xs rounded-t-3xl" id="Contact">
-      <div className="flex flex-col justify-between items-center gap-space-xs lg:flex-row ">
+    <footer
+      className="bg-black text-white px-space-lg py-space-xs rounded-t-3xl"
+      id="Contact"
+    >
+      <div className="flex flex-col justify-between items-center gap-space-xs md:flex-row ">
         {/* Contact */}
-        <div className="flex flex-col items-center gap-space-xs lg:flex-row">
+        <div className="flex flex-col items-center gap-space-xs md:flex-row">
           {socials.map(({ name, href, displayName }) => (
             <a
               key={name}
