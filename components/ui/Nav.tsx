@@ -2,6 +2,7 @@
 
 import { navItems, socials } from "@/data/navData";
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import { clsx } from "clsx";
 
 const Nav = () => {
@@ -9,6 +10,12 @@ const Nav = () => {
 
   const toggleMenu = () => {
     setOpen((prev) => !prev);
+  };
+
+  // Aggressive bounce animation variants
+  const bounceVariant = {
+    hidden: { opacity: 0, x: 300 },
+    visible: { opacity: 1, x: 0 },
   };
 
   return (
@@ -49,40 +56,64 @@ const Nav = () => {
       </div>
 
       {/* Mobile */}
-      <div
-        className={clsx(
-          "fixed inset-0 bg-white transition-opacity duration-300 md:hidden z-10",
-          open ? "opacity-100" : "opacity-0 pointer-events-none",
-        )}
-        aria-hidden={!open}
-      >
-        <div className="container h-full flex flex-col items-start justify-center gap-space-xs">
-          {navItems.map((item) => (
-            <a
-              key={item.name}
-              href={item.href}
-              className="nav-item text-7xl font-bold j"
-              onClick={toggleMenu}
-            >
-              {item.name}
-            </a>
-          ))}
-          <div className="uppercase">Get in touch</div>
-          <div className="flex flex-col">
-            {socials.map(({ name, href, displayName }) => (
-              <a
-                key={name}
-                href={href}
-                className="text-xl"
-                target={name === "Email" ? "_self" : "_blank"}
-                rel={name === "Email" ? undefined : "noopener noreferrer"}
+      {open && (
+        <motion.div
+          className="fixed inset-0 bg-white transition-opacity duration-300 md:hidden z-10"
+          key={open.toString()} // Forces remount on open state change
+          initial="hidden"
+          animate="visible"
+          variants={{
+            visible: { opacity: 1 },
+            hidden: { opacity: 1 },
+          }}
+          aria-hidden={!open}
+        >
+          <div className="container h-full flex flex-col items-start justify-center gap-space-xs">
+            {navItems.map((item, index) => (
+              <motion.a
+                key={item.name}
+                href={item.href}
+                className="nav-item text-7xl font-bold"
+                onClick={toggleMenu}
+                initial="hidden"
+                animate="visible"
+                variants={bounceVariant}
+                transition={{
+                  type: "spring",
+                  stiffness: 100,
+                  damping: 8,
+                  delay: index * 0.1,
+                }}
               >
-                {displayName || name}&nbsp;&#8599;
-              </a>
+                {item.name}
+              </motion.a>
             ))}
+            <div className="uppercase mt-8">Get in touch</div>
+            <div className="flex flex-col mt-4">
+              {socials.map(({ name, href, displayName }, index) => (
+                <motion.a
+                  key={`${name}-${open}`} // Force re-render by including `open` in the key
+                  href={href}
+                  className="text-xl"
+                  target={name === "Email" ? "_self" : "_blank"}
+                  rel={name === "Email" ? undefined : "noopener noreferrer"}
+                  initial="hidden"
+                  animate="visible"
+                  variants={bounceVariant}
+                  transition={{
+                    type: "spring",
+                    stiffness: 100,
+                    damping: 8,
+                    delay: (index + navItems.length) * 0.1,
+                  }}
+                >
+                  {displayName || name}&nbsp;&#8599;
+                </motion.a>
+              ))}
+            </div>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      )}
     </nav>
   );
 };
