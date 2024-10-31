@@ -92,11 +92,12 @@ function Projects() {
                         style={{ objectFit: "cover" }}
                         className="rounded-xl absolute top-0 left-0 opacity-80"
                         placeholder="blur"
+                        loading="lazy"
                       />
 
                       {/* Second Image (Overlay) */}
                       <div className="absolute inset-0 flex justify-center items-center">
-                        <div className="relative w-[80vw] h-[80vw] max-w-lg max-h-lg">
+                        <div className="relative w-[80vw] h-full max-w-lg max-h-full">
                           <Image
                             src={project.image}
                             alt={project.title}
@@ -104,6 +105,7 @@ function Projects() {
                             style={{ objectFit: "contain" }}
                             className="z-10"
                             placeholder="blur"
+                            loading="lazy"
                           />
                         </div>
                       </div>
