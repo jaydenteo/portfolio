@@ -11,8 +11,9 @@ export default function SmoothScroll({ children }: Props) {
   useEffect(() => {
     const lenis = new Lenis({
       duration: 0.5,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      easing: (t) => t * (2 - t),
       smoothWheel: true,
+      syncTouch: true,
     });
 
     function animate(time: number) {
