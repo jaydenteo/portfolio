@@ -7,7 +7,7 @@ function About() {
       id="About"
       className="px-space-sm md:px-space-lg h-[80svh] flex flex-col lg:flex-row"
     >
-      <Reveal direction="up" amount={0.2} className="w-full lg:w-1/2">
+      <Reveal direction="up" amount={0.5} className="w-full lg:w-1/2">
         <h2 className="text-heading-1 font-bold">
           Consultant <br /> Developer <br /> Engineer
         </h2>
