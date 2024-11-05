@@ -6,6 +6,7 @@ import Image from "next/image";
 import SkillTag, { TagVariant } from "../ui/SkillTag";
 import { skills } from "@/data/skillsData";
 import Reveal from "../ui/Reveal";
+import ScrambleText from "../ui/Scramble";
 
 function Projects() {
   return (
@@ -33,7 +34,9 @@ function Projects() {
                 <div className="flex flex-col justify-center h-1/3 lg:h-full lg:w-1/2">
                   {/* TITLE */}
                   <div className="flex items-center text-heading-2 tracking-heading font-bold">
-                    {index + 1}. {project.title}
+                    <ScrambleText>
+                      {`${index + 1}. ${project.title}`}
+                    </ScrambleText>
                   </div>
                   {/* SKILLS */}
                   <div className="right-space-sm md:right-space-lg flex flex-col justify-center">
