@@ -13,6 +13,7 @@ const SmoothScroll = ({ children }: Props) => {
       duration: 0.5,
       easing: (t) => t * (2 - t),
       smoothWheel: true,
+      syncTouch: true,
     });
 
     function animate(time: number) {
