@@ -115,6 +115,8 @@ function Projects() {
               </div>
             </div>
           </div>
+
+          <div className=" custom-gradient pointer-events-none absolute left-0 top-0 z-30 h-screen w-full animate-pan-overlay opacity-5"></div>
         </div>
       ))}
     </section>
