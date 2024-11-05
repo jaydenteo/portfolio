@@ -4,7 +4,7 @@ import Footer from "@/components/pages/Footer";
 import Hero from "@/components/pages/Hero";
 import Projects from "@/components/pages/Projects";
 import Skills from "@/components/pages/Skills";
-import Nav from "@/components/ui/Nav";
+import Nav from "@/components/pages/Nav";
 
 export default function Home() {
   return (
