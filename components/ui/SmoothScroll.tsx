@@ -3,15 +3,15 @@
 import Lenis from "lenis";
 import { useEffect } from "react";
 
-type Props = {
+interface Props {
   children: React.ReactNode;
-};
+}
 
-export default function SmoothScroll({ children }: Props) {
+const SmoothScroll = ({ children }: Props) => {
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 0.5,
-      easing: (t) => t * (2 - t),
+      duration: 1.2,
+      easing: (t) => t * Math.pow(1 - t, 3),
       smoothWheel: true,
       syncTouch: true,
     });
@@ -28,4 +28,6 @@ export default function SmoothScroll({ children }: Props) {
     };
   }, []);
   return <>{children}</>;
-}
+};
+
+export default SmoothScroll;
