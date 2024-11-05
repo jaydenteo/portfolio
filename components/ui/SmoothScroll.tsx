@@ -10,8 +10,8 @@ interface Props {
 const SmoothScroll = ({ children }: Props) => {
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 0.5,
-      easing: (t) => t * (2 - t),
+      duration: 1.2,
+      easing: (t) => 1 - Math.pow(1 - t, 3),
       smoothWheel: true,
       syncTouch: true,
     });
