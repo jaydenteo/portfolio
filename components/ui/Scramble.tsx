@@ -17,7 +17,7 @@ const ScrambleText: React.FC<Props> = ({ children }) => {
 
   const [text, setText] = useState(TARGET_TEXT);
   const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref);
+  const inView = useInView(ref, { once: true });
 
   const scramble = () => {
     let pos = 0;
